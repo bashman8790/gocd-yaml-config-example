@@ -28,7 +28,6 @@ pipelines:
       mygit: # this is the name of material
         # keyword git says about type of material and url at once
         git: https://github.com/bashman8790/go-docker.git
-        branch: ci
       upstream:
         # type is optional here, material type is implied based on presence of pipeline and stage fields
         # type: dependency
