@@ -13,8 +13,6 @@ pipelines:
       - build: # name of stage
           jobs:
             build: # name of the job
-              resources:
-              - test1
               tasks:
                - exec: # indicates type of task
                    command: ls
