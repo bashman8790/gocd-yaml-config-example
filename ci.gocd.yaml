@@ -3,7 +3,7 @@ environments:
     environment_variables:
       EXAMPLE_DEPLOYMENT: testing
 pipelines:
-  yamlpipe1:
+  pipe1:
     group: simple
     materials:
       mygit:  # this is the name of material
