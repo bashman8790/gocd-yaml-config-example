@@ -2,8 +2,6 @@ environments:
   example:
     environment_variables:
       EXAMPLE_DEPLOYMENT: testing
-    pipelines:
-      - yaml-example
 pipelines:
   yamlpipe1:
     group: simple
