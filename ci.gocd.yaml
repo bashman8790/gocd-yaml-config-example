@@ -1,7 +1,3 @@
-environments:
-  example:
-    environment_variables:
-      EXAMPLE_DEPLOYMENT: testing
 pipelines:
   pipe1:
     group: simple
