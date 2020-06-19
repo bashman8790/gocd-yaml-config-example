@@ -1,15 +1,31 @@
-# simple.gocd.yaml
+#ci.gocd.yaml
+format_version: 9
+environments:
+  hieu-env:
+    environment_variables:
+      EXAMPLE_DEPLOYMENT: testing
+    pipelines:
+    - hieu-test-build-image
 pipelines:
-  pipe1:
-    group: simple
+  hieu-test-build-image:
+    group: hieu-env
+    label_template: ${COUNT}
+    lock_behavior: unlockWhenFinished
+    display_order: -1
     materials:
-      mygit:  # this is the name of material
-        # says about type of material and url at once
-        git: http://my.example.org/mygit.git
+      tops-fe-bitbucket:
+        git: https://hieunv3@bitbucket.org/hieunv3/tops-fe.git
     stages:
-      - build: # name of stage
+      - build-image:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: true
+          approval:
+            type: manual
           jobs:
-            build: # name of the job
+            list-file: # name of the job
               tasks:
                - exec: # indicates type of task
-                   command: make
+                   command: ls
+                   arguments:
+                   - -al
